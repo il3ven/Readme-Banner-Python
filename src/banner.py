@@ -3,6 +3,7 @@ from PIL import Image, ImageDraw, ImageFont
 import random
 
 random.seed()
+print("Random Initialized")
 
 FONT_SIZE = 20
 CURSOR_WIDTH = 5
@@ -13,7 +14,9 @@ end_strings = ["Hey, Don't forget to smile. It suites you.",
     "Welcome. Stay as long as you want."]
 
 def createBanner(stream: io.BytesIO):
-    text = end_strings[random.randint(0, len(end_strings)-1)]
+    randomIndex = random.randint(0, len(end_strings)-1)
+    print(f"Using {randomIndex} to generate string")
+    text = end_strings[randomIndex]
     gif = []
     pixel = [10, 10]
     fnt = ImageFont.truetype("fonts/Roboto-Regular.ttf", FONT_SIZE)
