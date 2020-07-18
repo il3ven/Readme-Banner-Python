@@ -32,8 +32,7 @@ def createBanner(stream: io.BytesIO):
     im.save(stream, format="JPEG")
     return
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
+@app.route('/')
 def catch_all(path):
     return Response("<h1>Flask</h1><p>You visited: /%s</p>" % (path), mimetype="text/html")
 # def serve_image():
