@@ -1,6 +1,5 @@
-import sys
 from flask import Flask, send_file, render_template
-from banner import createBanner
+from src.banner import createBanner
 import io
 
 app = Flask(__name__)
