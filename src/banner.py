@@ -2,6 +2,8 @@ import io
 from PIL import Image, ImageDraw, ImageFont
 import random
 
+random.seed()
+
 FONT_SIZE = 20
 CURSOR_WIDTH = 5
 CURSOR_HEIGHT = FONT_SIZE
