@@ -34,11 +34,13 @@ def createBanner(stream: io.BytesIO):
 
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
-def serve_image():
-    stream = io.BytesIO() # Create a in memory byte stream
-    try:
-        createBanner(stream)
-        stream.seek(0) # HACK
-        return send_file(stream, mimetype="image/jpeg")
-    except Exception as e:
-        return str(e)
+def catch_all(path):
+    return Response("<h1>Flask</h1><p>You visited: /%s</p>" % (path), mimetype="text/html")
+# def serve_image():
+#     stream = io.BytesIO() # Create a in memory byte stream
+#     try:
+#         createBanner(stream)
+#         stream.seek(0) # HACK
+#         return send_file(stream, mimetype="image/jpeg")
+#     except Exception as e:
+#         return str(e)
