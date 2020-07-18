@@ -39,6 +39,6 @@ def serve_image():
     try:
         createBanner(stream)
         stream.seek(0) # HACK
-        return send_file(stream, mimetype="image/gif")
+        return send_file(stream, mimetype="image/jpeg")
     except Exception as e:
         return str(e)
