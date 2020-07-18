@@ -32,7 +32,8 @@ def createBanner(stream: io.BytesIO):
     im.save(stream, format="JPEG")
     return
 
-@app.route('/')
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
 def serve_image():
     stream = io.BytesIO() # Create a in memory byte stream
     try:
